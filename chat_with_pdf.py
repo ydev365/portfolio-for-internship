@@ -64,4 +64,9 @@ prompt = prompt_template.format(context=context_text, question=query)
 model = ChatOpenAI()
 response_text = model.invoke(prompt)
 
+
+#질문에 대한 답변이다.
 print(f'\n{response_text.content}')
+
+#답변의 근거가 되는 페이지다.
+print(f"\n{docs_chroma[0][0].metadata['page']+1} 페이지에 근거가 있다.")
